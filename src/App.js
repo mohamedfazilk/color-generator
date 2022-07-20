@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import SingleColor from './Single';
-import Values from './value.js'
+import Values from 'values.js'
 
 function App() {
 
@@ -11,16 +11,24 @@ function App() {
 
   const handleSubmit =(e) =>{
     e.preventDefault();
-    console.log('hii');
-
+   const colors = new Values(color).all(10) //imported this from values.js package
+   console.log(colors); 
   }
   return(
     <>
     <section className='container'>
       <h3>color Generator</h3>
+
+    {/* //form submission// */}
     <form onSubmit={handleSubmit}>
-      <input type="text" value={color} />
+      <input type="text" value={color}  onChange={(e)=>setColor(
+        e.target.value)}v placeholder='#15205'/>
+        <button className='btn'>Generate</button>
     </form>
+    </section>
+
+    <section className='colors'>
+
     </section>
     </>
 
