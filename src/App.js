@@ -14,6 +14,7 @@ function App() {
   
   try{
     const colors = new Values(color).all(10) //imported this from values.js package
+    setList(colors)//all the colors are in setList
     console.log(colors); 
 
   }
@@ -41,6 +42,7 @@ function App() {
     </section>
 
     <section className='colors'>
+  
 
     </section>
     </>
