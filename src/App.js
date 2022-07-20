@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import SingleColor from './Single';
+import Values from './value.js'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+  //use state for storing string , setting error and default values
+  const [color, setColor] = useState('');
+  const [error, setError] = useState(false);
+  const [list, setList] = useState([]);
+
+  const handleSubmit =(e) =>{
+    e.preventDefault();
+    console.log('hii');
+
+  }
+  return(
+    <>
+    <section className='container'>
+      <h3>color Generator</h3>
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={color} />
+    </form>
+    </section>
+    </>
+
+  ) 
+  }
 
 export default App;
