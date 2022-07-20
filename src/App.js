@@ -11,8 +11,18 @@ function App() {
 
   const handleSubmit =(e) =>{
     e.preventDefault();
-   const colors = new Values(color).all(10) //imported this from values.js package
-   console.log(colors); 
+  
+  try{
+    const colors = new Values(color).all(10) //imported this from values.js package
+    console.log(colors); 
+
+  }
+  catch(error){
+    setError(true);
+    console.log(error);
+    
+  } 
+  
   }
   return(
     <>
