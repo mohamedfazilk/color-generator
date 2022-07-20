@@ -31,8 +31,11 @@ function App() {
 
     {/* //form submission// */}
     <form onSubmit={handleSubmit}>
-      <input type="text" value={color}  onChange={(e)=>setColor(
-        e.target.value)}v placeholder='#15205'/>
+      <input type="text" value={color}
+        onChange={(e)=>setColor(
+        e.target.value)}
+         placeholder='#15205'
+         className={ error?'error':null}/>
         <button className='btn'>Generate</button>
     </form>
     </section>
