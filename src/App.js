@@ -5,9 +5,10 @@ import Values from 'values.js'
 function App() {
 
   //use state for storing string , setting error and default values
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('#f15025');
   const [error, setError] = useState(false);
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(new Values('#f15025')
+  .all(10));
 
   const handleSubmit =(e) =>{
     e.preventDefault();
