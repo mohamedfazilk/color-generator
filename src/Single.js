@@ -3,13 +3,23 @@ import rgbToHex from './utils'
 
 const SingleColor = ({rgb,weight, index, hexcolor}) => {
   const [alert, setAlert] = useState(false);//for alert when copying values
-  const bcg = rgb.join(',')//se[parating rgb values by join method
+  const bcg = rgb.join(',')           //se[parating rgb values by join method
   console.log(bcg)
   console.log(hexcolor)
   
   const hexvalue = `#${hexcolor}`   //set the # code in to hexvalues by template string
 
   const hex = rgbToHex(...rgb);       //printing the hex values by rgbToHex method also
+
+  useEffect(()=>{
+    const timeUp = setInterval(() => {
+     setAlert(false);                //for disapperaing the text
+    }, 2000);
+    return ()=>{
+      clearInterval(timeUp)         // clean up function while rendering
+    } 
+
+  }, [alert])
 
   return <article 
   className={`color ${index>10 && 'color-light'}`
