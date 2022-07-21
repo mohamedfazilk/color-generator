@@ -17,6 +17,7 @@ const SingleColor = ({rgb,weight, index, hexcolor}) => {
   style={{backgroundColor:`rgb(${bcg})`}}
   onClick={()=>{
     setAlert(true);
+    navigator.clipboard.writeText(hexvalue) //for copying the text
   }}
   >
     <p className='percent-value'>{weight}%  </p>
