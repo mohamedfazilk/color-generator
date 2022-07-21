@@ -14,9 +14,15 @@ const SingleColor = ({rgb,weight, index, hexcolor}) => {
   return <article 
   className={`color ${index>10 && 'color-light'}`
  }
-  style={{backgroundColor:`rgb(${bcg})`}}>
+  style={{backgroundColor:`rgb(${bcg})`}}
+  onClick={()=>{
+    setAlert(true);
+  }}
+  >
     <p className='percent-value'>{weight}%  </p>
+    {alert && <p className='alert'>Copied to Clipboard</p>}
     <p>{hexvalue}</p>
+  
 
   </article>
 }

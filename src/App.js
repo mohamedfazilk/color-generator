@@ -15,6 +15,7 @@ function App() {
   try{
     const colors = new Values(color).all(10) //imported this from values.js package
     setList(colors)//all the colors are in setList
+    setError(false)
     console.log(colors); 
 
   }
